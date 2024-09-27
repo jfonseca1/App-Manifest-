@@ -18,9 +18,11 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: fjacinto349/images:app-
+      - image: fjacinto349/images:app-1
         name: flaskdemo
         resources: {}
+        ports:
+        - containerPort: 5000
 status: {}
 ---
 apiVersion: v1

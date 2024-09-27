@@ -30,6 +30,9 @@ spec:
         resources: {}
         ports:
         - containerPort: 5000
+        volumeMounts:
+        - name: shared-libs
+          mountPath: /usr/local/lib/python3.8/site-packages
     volumes:
     - name: shared-libs
       emptyDir: {}

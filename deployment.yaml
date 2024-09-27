@@ -25,7 +25,7 @@ spec:
         - name: shared-libs
           mountPath: /usr/local/lib/python3.8/site-packages
       containers:
-      - image: fjacinto349/images:app-1
+      - image: fjacinto349/images:app-
         name: flaskdemo
         resources: {}
         ports:

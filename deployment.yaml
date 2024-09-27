@@ -17,12 +17,22 @@ spec:
       labels:
         app: flaskdemo
     spec:
+      initContainers:
+      - name: install-packages
+        image: python:3.8-slim-buster
+        command: ['pip', 'install', 'Flask==2.2.2', 'Werkzeug==2.2.2']
+        volumeMounts:
+        - name: shared-libs
+          mountPath: /usr/local/lib/python3.8/site-packages
       containers:
       - image: fjacinto349/images:app-1
         name: flaskdemo
         resources: {}
         ports:
         - containerPort: 5000
+    volumes:
+    - name: shared-libs
+      emptyDir: {}
 
 status: {}
 ---
